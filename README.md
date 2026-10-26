@@ -77,17 +77,33 @@ Completed tasks were excluded from scheduling.
 
 ```bash
 # Run the full test suite:
-pytest
+python -m pytest
 
 # Run with coverage:
-pytest --cov
+python -m pytest --cov
 ```
 
 Sample test output:
 
 ```
-# Paste your pytest output here
+========================================================== test session starts ===========================================================
+platform win32 -- Python 3.14.0, pytest-9.1.1, pluggy-1.7.0 -- C:\Users\chris\OneDrive\Desktop\AI-110_Project_2\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\chris\OneDrive\Desktop\AI-110_Project_2
+plugins: anyio-4.15.1
+collected 5 items                                                                                                                                             
+
+tests/test_pawpal.py::test_task_completion PASSED                                                                                                       [ 20%]
+tests/test_pawpal.py::test_task_addition PASSED                                                                                                         [ 40%]
+tests/test_pawpal.py::test_sorting_correctness PASSED                                                                                                   [ 60%]
+tests/test_pawpal.py::test_daily_task_recurrence PASSED                                                                                                 [ 80%]
+tests/test_pawpal.py::test_conflict_detection PASSED                                                                                                    [100%]
+
+=========================================================== 5 passed in 0.14s ============================================================
 ```
+
+⭐ Confidence Level: 4/5
+I am highly confident in PawPal+'s reliability based on the core functionality covered by the tests. Additional edge-case and integration testing would help identify potential issues and increase confidence further.
 
 ## 📐 Smarter Scheduling
 - PawPal+ includes features to make pet-care scheduling easier and more organized.
