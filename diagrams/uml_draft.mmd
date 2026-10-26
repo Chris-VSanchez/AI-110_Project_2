@@ -1,0 +1,50 @@
+
+classDiagram
+    class Owner {
+        -String name
+        -List~Pet~ pets
+        -int availableMinutes
+        +addPet(Pet pet)
+        +editPetDetails(Pet pet)
+        +createTask(Task task)
+        +editTask(Task task)
+        +generateSchedule() Schedule
+    }
+
+    class Pet {
+        -String name
+        -int age
+        -String species
+        -Owner owner
+        +updateDetails(String name, int age, String species)
+        +getDetails()
+    }
+
+    class Task {
+        -String title
+        -int durationMinutes
+        -int priority
+        -bool isCompleted
+        -Owner owner
+        -Pet pet
+        +updateTask(String title, int duration, int priority)
+        +markComplete()
+        +markIncomplete()
+    }
+
+    class Schedule {
+        -Date date
+        -List~Task~ tasks
+        -int totalDuration
+        +addTask(Task task)
+        +removeTask(Task task)
+        +generateDailyPlan(int availableMinutes)
+        +displaySchedule()
+        +explainPlan()
+    }
+
+    Owner "1" --> "0..*" Pet : owns
+    Owner "1" --> "0..*" Task : creates
+    Pet "1" --> "0..*" Task : receives care through
+    Schedule "1" o-- "0..*" Task : organizes
+    Owner "1" --> "0..*" Schedule : generates

@@ -1,17 +1,32 @@
 # PawPal+ Project Reflection
 
 ## 1. System Design
+- The core actions a user should be able to perform are: adding a pet, creating tasks, and generating a daily schedule.
 
 **a. Initial design**
 
 - Briefly describe your initial UML design.
+    Owner: a class that holds the name of the person, a list of all their pets, and availability. Decides what the schedules
+        are and when. An owner can have many pets and create many tasks.
+    Pet: a class that that holds all the aniimal's data (name, age, species). A pet can only have one owner.
+    Task: a class that details an activity the owner will do. It includes a title, an estimated time, a priority, and a
+        completion status. An owner can make many tasks and a schedule can display many tasks. A task has only one owner associted
+        with it.
+    Schedule: a class tht displays all the events created by an owner.
+
 - What classes did you include, and what responsibilities did you assign to each?
+    I included owner, pet, task, and schedule classes. An owner is responsible for adding pets, entering / editing their details,
+    creating / editing tasks, and displaying a schedule. A schedule is responsible for displaying all the tasks for the day.
 
 **b. Design changes**
 
 - Did your design change during implementation?
-- If yes, describe at least one change and why you made it.
+    No, I found that my design was an accuate implementation of what the task requires. After using AI to implement my design,
+        I got the confirmation that my design was solid and got the assistance I needed to create the UML and Python skeleton 
+        code.
 
+- If yes, describe at least one change and why you made it.
+    N / A
 ---
 
 ## 2. Scheduling Logic and Tradeoffs
