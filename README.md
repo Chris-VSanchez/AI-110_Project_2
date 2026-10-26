@@ -54,6 +54,25 @@ Paste a sample of your app's CLI or Streamlit output here so a reader can see wh
 #   ...
 ```
 
+# Sample Output
+- The following output demonstrates the PawPal+ daily scheduling system with two pets, three care tasks, and a 45-minute time budget:
+========== Today's Schedule ==========
+PawPal+ Daily Plan — 2026-10-25
+----------------------------------------
+1. Walk Buddy (Buddy) — 20 min, priority 5/5
+2. Feed Whiskers (Whiskers) — 10 min, priority 4/5
+3. Brush Buddy (Buddy) — 15 min, priority 3/5
+
+Total: 45 / 45 minutes
+
+========== Schedule Explanation ==========
+Plan for 2026-10-25: 45 of 45 minutes used.
+Scheduled tasks were ranked by priority (5 is highest), then by shorter duration when priorities tied.
+- Selected 'Walk Buddy': priority 5/5, 20 minutes.
+- Selected 'Feed Whiskers': priority 4/5, 10 minutes.
+- Selected 'Brush Buddy': priority 3/5, 15 minutes.
+Completed tasks were excluded from scheduling.
+
 ## 🧪 Testing PawPal+
 
 ```bash
