@@ -90,15 +90,18 @@ Sample test output:
 ```
 
 ## 📐 Smarter Scheduling
+- PawPal+ includes features to make pet-care scheduling easier and more organized.
 
 > Fill in once you've implemented scheduling logic.
 
-| Feature | Method(s) | Notes |
-|---------|-----------|-------|
-| Task sorting | | e.g., by priority, duration |
-| Filtering | | e.g., skip tasks if time runs out |
-| Conflict handling | | e.g., overlapping time slots |
-| Recurring tasks | | e.g., daily vs. weekly |
++-------------------+----------------------------------+----------------------------------------------+
+| Feature           | Method(s)                        | Notes                                        |
++-------------------+----------------------------------+----------------------------------------------+
+| Task sorting      | Scheduler.sort_by_time()         | Sorts by start time; unset times appear last.|
+| Filtering         | Scheduler.filter_tasks()         | Filters by pet name and completion status.   |
+| Conflict handling | Scheduler.detect_time_conflicts()| Detects tasks with identical start times.    |
+| Recurring tasks   | Scheduler.mark_task_complete()   | Creates the next daily or weekly occurrence. |
++-------------------+----------------------------------+----------------------------------------------+
 
 ## 📸 Demo Walkthrough
 

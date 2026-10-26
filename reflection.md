@@ -34,13 +34,18 @@
 **a. Constraints and priorities**
 
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
+    It considers available time, task duration, priority, completion status, due dates, and scheduling conflicts.
+
 - How did you decide which constraints mattered most?
+    Priority and available time matter most so important pet-care tasks are scheduled first without exceeding the owner's time limit.
 
 **b. Tradeoffs**
 
 - Describe one tradeoff your scheduler makes.
-- Why is that tradeoff reasonable for this scenario?
+    It detects tasks with identical start times but does not detect overlapping task durations.
 
+- Why is that tradeoff reasonable for this scenario?
+    It keeps the scheduler simple and easy to understand, although checking overlapping durations would improve accuracy.
 ---
 
 ## 3. AI Collaboration
