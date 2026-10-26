@@ -1,0 +1,74 @@
+classDiagram
+    class Owner {
+        +String name
+        +int available_minutes
+        +List~Pet~ pets
+        +List~Task~ tasks
+        +List~Schedule~ schedules
+        +add_pet(Pet pet) void
+        +edit_pet_details(Pet pet) void
+        +create_task(Task task) void
+        +edit_task(Task task) void
+        +get_all_tasks() List~Task~
+        +generate_schedule() Schedule
+    }
+
+    class Pet {
+        +String name
+        +int age
+        +String species
+        +Owner owner
+        +List~Task~ tasks
+        +update_details(String name, int age, String species) void
+        +get_details() dict
+        +add_task(Task task) void
+    }
+
+    class Task {
+        +String title
+        +int duration_minutes
+        +int priority
+        +bool is_completed
+        +Owner owner
+        +Pet pet
+        +String frequency
+        +String time
+        +Date due_date
+        +update_task(String title, int duration, int priority) void
+        +mark_complete() void
+        +mark_incomplete() void
+    }
+
+    class Schedule {
+        +Date date
+        +List~Task~ tasks
+        +int total_duration
+        +List~Task~ skipped_tasks
+        +int available_minutes
+        +add_task(Task task) void
+        +remove_task(Task task) void
+        +generate_daily_plan(int available_minutes) void
+        +display_schedule() void
+        +explain_plan() String
+    }
+
+    class Scheduler {
+        +Owner owner
+        +get_all_tasks() List~Task~
+        +mark_task_complete(Task task) Task
+        +sort_by_time(List~Task~ tasks) List~Task~
+        +filter_tasks(bool is_completed, String pet_name) List~Task~
+        +generate_schedule(int available_minutes) Schedule
+        +detect_time_conflicts() List~String~
+    }
+
+    Owner "1" --> "0..*" Pet : owns
+    Owner "1" --> "0..*" Task : manages
+    Owner "1" --> "0..*" Schedule : generates
+    Pet "1" --> "0..*" Task : has care tasks
+    Task "0..*" --> "0..1" Pet : assigned to
+    Task "0..*" --> "0..1" Owner : belongs to
+    Schedule "1" o-- "0..*" Task : organizes
+    Scheduler --> Owner : manages
+    Scheduler ..> Schedule : generates
+    Scheduler ..> Task : sorts filters and completes

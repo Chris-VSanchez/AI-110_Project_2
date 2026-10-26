@@ -123,10 +123,61 @@ I am highly confident in PawPal+'s reliability based on the core functionality c
 
 Describe your app in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. Add pets and configure settings.
+    Run streamlit run app.py. Set the owner's name and available care time, then add pets by entering their names, ages, and species.
+2. Create care tasks.
+    Add tasks such as a morning walk or feeding. Assign each task to a pet, set its duration, priority, frequency, and optional start time.
+3. Sort and filter tasks.
+    Use the Task Management Dashboard to sort tasks by priority, time, duration, or title. Filter by pet and completion status. The overview displays task totals and completion progress.
+4. Detect conflicts and manage recurring tasks.
+    PawPal+ warns when pending tasks share the same start time. Completing daily or weekly tasks through the Scheduler automatically creates their next occurrence.
+5. Generate today's care plan.
+    Click Generate Schedule to create a plan based on available time and task priorities. Review scheduled tasks, time remaining, skipped tasks, and the scheduling explanation.
+6. Run the CLI demonstration.
+    Run python main.py to test sorting, filtering, conflict detection, recurring tasks, and schedule generation independently of Streamlit.
+
+Output:
+========== Conflict Detection ==========
+WARNING: 'Walk Buddy' and 'Feed Whiskers' are both scheduled at 08:00 for different pets (Buddy and Whiskers).
+
+========== Recurring Task Automation ==========
+Completed: Feed Whiskers
+Original due date: 2026-10-25
+Next occurrence: Feed Whiskers
+Next due date: 2026-10-26
+Next occurrence completed: False
+
+========== Tasks Sorted by Time ==========
+08:00 | Feed Whiskers | Pet: Whiskers | 10 min | Priority: 4/5 | Completed | Due: 2026-10-25
+08:00 | Feed Whiskers | Pet: Whiskers | 10 min | Priority: 4/5 | Pending | Due: 2026-10-26
+08:00 | Walk Buddy | Pet: Buddy | 20 min | Priority: 5/5 | Pending | Due: 2026-10-25
+17:00 | Brush Buddy | Pet: Buddy | 15 min | Priority: 3/5 | Pending | Due: 2026-10-25
+
+========== Buddy's Tasks ==========
+17:00 | Brush Buddy | Pet: Buddy | 15 min | Priority: 3/5 | Pending | Due: 2026-10-25
+08:00 | Walk Buddy | Pet: Buddy | 20 min | Priority: 5/5 | Pending | Due: 2026-10-25
+
+========== Pending Tasks ==========
+17:00 | Brush Buddy | Pet: Buddy | 15 min | Priority: 3/5 | Pending | Due: 2026-10-25
+08:00 | Walk Buddy | Pet: Buddy | 20 min | Priority: 5/5 | Pending | Due: 2026-10-25
+08:00 | Feed Whiskers | Pet: Whiskers | 10 min | Priority: 4/5 | Pending | Due: 2026-10-26
+
+========== Completed Tasks ==========
+08:00 | Feed Whiskers | Pet: Whiskers | 10 min | Priority: 4/5 | Completed | Due: 2026-10-25
+
+========== Today's Schedule ==========
+PawPal+ Daily Plan — 2026-10-25
+----------------------------------------
+1. 08:00 | Walk Buddy (Buddy) — 20 min, priority 5/5
+2. 17:00 | Brush Buddy (Buddy) — 15 min, priority 3/5
+
+Total: 35 / 45 minutes
+
+========== Schedule Explanation ==========
+Plan for 2026-10-25: 35 of 45 minutes used.
+Scheduled tasks were ranked by priority (5 is highest), then by shorter duration when priorities tied.
+- Selected 'Walk Buddy': priority 5/5, 20 minutes.
+- Selected 'Brush Buddy': priority 3/5, 15 minutes.
+Completed tasks were excluded from scheduling.  
 
 **Screenshot or video** *(optional)*: <!-- Insert a screenshot or link to a demo video here -->

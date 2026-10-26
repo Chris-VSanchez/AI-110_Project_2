@@ -53,13 +53,18 @@
 **a. How you used AI**
 
 - How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
+    I used AI to brainstorm features, debug errors, improve my code, and update my UML diagram.
+
 - What kinds of prompts or questions were most helpful?
+    Asking AI how to improve my scheduler, connect my classes, and update my Streamlit UI was most helpful.
 
 **b. Judgment and verification**
 
 - Describe one moment where you did not accept an AI suggestion as-is.
-- How did you evaluate or verify what the AI suggested?
+    I checked AI-generated code changes before using them to make sure they matched my existing classes and methods.
 
+- How did you evaluate or verify what the AI suggested?
+    I reviewed the code and tested the features to confirm they worked correctly.
 ---
 
 ## 4. Testing and Verification
@@ -67,13 +72,18 @@
 **a. What you tested**
 
 - What behaviors did you test?
+    I tested adding pets and tasks, sorting and filtering tasks, detecting conflicts, completing recurring tasks, and generating schedules.
+
 - Why were these tests important?
+    They helped me verify that the main features worked correctly and that tasks were scheduled as expected.
 
 **b. Confidence**
 
 - How confident are you that your scheduler works correctly?
-- What edge cases would you test next if you had more time?
+    I am fairly confident that my scheduler works correctly for the main scenarios I tested.
 
+- What edge cases would you test next if you had more time?
+    I would test empty task lists, zero available time, invalid inputs, and overlapping task durations.
 ---
 
 ## 5. Reflection
@@ -81,11 +91,14 @@
 **a. What went well**
 
 - What part of this project are you most satisfied with?
+    I am most satisfied with combining pet management, task scheduling, and conflict detection into one application.
 
 **b. What you would improve**
 
 - If you had another iteration, what would you improve or redesign?
+    I would improve the user interface, add permanent data storage, and make conflict detection identify overlapping task durations.
 
 **c. Key takeaway**
 
 - What is one important thing you learned about designing systems or working with AI on this project?
+    I learned that good system design, thorough testing, and verifying AI suggestions are important for building reliable software.
